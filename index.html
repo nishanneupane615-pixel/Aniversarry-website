@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishan(Netra)❤️ Swikriti(Ghana)</title>
+
+<style>
+#countdownBox {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 77, 166, 0.15);
+  border: 1px solid rgba(255, 77, 166, 0.4);
+  color: #ff4da6;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-family: Arial;
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+
+#mainContent {
+  display: none; /* IMPORTANT: hides website initially */
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: black;
+  color: white;
+}
+
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1a001f, black);
+  text-align: center;
+}
+
+#countdown {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #ff4da6;
+}
+
+#mainContent {
+  display: none;
+  padding: 20px;
+}
+#lockScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', 'Trebuchet MS', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(to bottom,#87CEEB,#BFEFFF,#EAF8FF);
+color:#111;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:url('poster.jpg') center center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(2px);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-size:3.5rem;
+font-weight:800;
+letter-spacing:2px;
+color:#000;
+margin-bottom:10px;
+text-shadow:0 0 10px rgba(255,255,255,.6);
+}
+
+.hero p{
+font-size:1.3rem;
+color:#111;
+font-weight:600;
+}
+
+.section{
+padding:70px 20px;
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.quote{
+font-size:1.7rem;
+font-style:italic;
+line-height:1.8;
+font-weight:600;
+}
+
+.timeline{
+text-align:left;
+max-width:650px;
+margin:auto;
+line-height:2;
+font-size:1.15rem;
+background:rgba(255,255,255,.45);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(5px);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+padding-top:30px;
+}
+
+.gallery img{
+width:100%;
+padding:10px;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.letter{
+background:rgba(255,255,255,.75);
+padding:30px;
+border-radius:25px;
+line-height:2;
+font-size:1.1rem;
+color:#000;
+backdrop-filter:blur(8px);
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.final{
+font-size:2rem;
+font-weight:700;
+line-height:1.8;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:10px;
+}
+.slideshow-container{
+position:relative;
+width:100%;
+max-width:900px;
+margin:auto;
+aspect-ratio:9/16;
+overflow:hidden;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+background:white;
+}
+.slide{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:contain;
+opacity:0;
+transition:opacity 1.5s ease;
+}
+
+.slide.active{
+opacity:1;
+}
+.heart{
+position:fixed;
+bottom:-50px;
+animation:float 8s linear infinite;
+opacity:.6;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+#loading-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+to bottom,
+#87CEEB,
+#6EC6FF,
+#4DA6FF
+);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.movie-card{
+text-align:center;
+padding:30px;
+}
+
+.movie-card h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.movie-card p{
+font-size:1.2rem;
+margin-bottom:10px;
+}
+
+.movie-card button{
+padding:15px 30px;
+border:none;
+border-radius:50px;
+font-size:1rem;
+cursor:pointer;
+font-weight:bold;
+}
+
+.movie-card button:hover{
+transform:scale(1.05);
+}
+#loading-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to bottom,#8FD3FF,#EAF7FF);
+z-index:99999;
+padding:20px;
+}
+
+.countdown-card{
+width:100%;
+max-width:420px;
+background:white;
+border-radius:35px;
+padding:45px 25px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.heart{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.countdown-card h1{
+font-family:Georgia,serif;
+font-size:3rem;
+font-weight:600;
+line-height:1.2;
+color:#111;
+margin-bottom:25px;
+}
+
+.for{
+font-size:1.5rem;
+margin-bottom:35px;
+color:#333;
+}
+
+#lockCountdown{
+font-size:3.7rem;
+font-weight:800;
+line-height:1.25;
+color:#111;
+margin-bottom:35px;
+}
+
+.unlock{
+font-size:1.35rem;
+color:#444;
+line-height:1.6;
+}
+
+@media(max-width:600px){
+
+.countdown-card{
+padding:35px 20px;
+}
+
+.countdown-card h1{
+font-size:2.6rem;
+}
+
+#lockCountdown{
+font-size:2.9rem;
+}
+
+.for,
+.unlock{
+font-size:1.2rem;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading-screen">
+
+<div class="countdown-card">
+
+<div class="heart">💙</div>
+
+<h1>
+A Special<br>
+Surprise Is<br>
+Waiting...
+</h1>
+
+<p class="for">
+For Swikriti (Pukuuu)
+</p>
+
+<div id="lockCountdown">
+Loading...
+</div>
+
+<p class="unlock">
+Unlocks on July 8, 2026 •<br>
+12:00 AM
+</p>
+
+</div>
+
+</div>
+<div id="mainContent" style="display:none;">
+<section class="hero">
+<div class="hero-content">
+<h1>Nishan ❤️ Swikriti</h1>
+<p>2024 → 2026</p>
+<p>2 Years Together 💙</p>
+</div>
+</section>
+
+<section class="section">
+<div class="quote">
+"Everytime i look into your eyes babyy,i fall in loveeee again."<br>
+</div>
+</section>
+
+<section class="section">
+<h2>Our Journey 💙</h2>
+<br><br>
+<div class="timeline">
+🌱 <b>2024 july 8th</b><br>
+The completely strangers never known to eachother,were brought together in panchayat by the universe.<br><br>
+
+💙 <b>2025</b><br>
+Alots of fights,cries,break downs but we never left eachother's shoulder and fought through every obsticle.<br><br>
+
+🫶 <b>2026</b><br>
+Still the same person but our love grew even stronger,we now bond with eachother everywell and we are more than happyyy togetherrr.
+</div>
+</section>
+
+<section class="section">
+  <section class="section">
+<h2>🎬 Our Memory Montage</h2>
+
+<p>
+Some of my favorite memories with my favorite person 💙
+</p>
+
+<div class="slideshow-container">
+
+<img class="slide" src="photo1.jpg">
+<img class="slide" src="photo2.jpg">
+<img class="slide" src="photo3.jpg">
+<img class="slide" src="photo4.jpg">
+<img class="slide" src="photo5.jpg">
+<img class="slide" src="photo6.jpg">
+<img class="slide" src="photo7.jpg">
+<img class="slide" src="photo8.jpg">
+<img class="slide" src="photo9.jpg">
+<img class="slide" src="photo10.jpg">
+<img class="slide" src="photo11.jpg">
+<img class="slide" src="photo12.jpg">
+
+</div>
+</section>
+<h2>Our Memories 📸</h2>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+<img src="photo7.jpg">
+<img src="photo8.jpg">
+<img src="photo9.jpg">
+<img src="photo10.jpg">
+<img src="photo11.jpg">
+<img src="photo12.jpg">
+</div>
+</section>
+
+<section class="section">
+<h2>To My Pukuuu 💙</h2>
+<br>
+<section class="section">
+<h2>⏳ Countdown To Our Anniversary</h2>
+
+<div id="countdown" style="
+font-size:2rem;
+font-weight:bold;
+margin-top:20px;
+">
+Loading...
+</div>
+</section>
+<div class="letter">
+😘 Once again, HAPPPYYYY 2TH YEAR OF OUR RELATIONSHIPPP BABYYY😘<br><br>
+
+I REEEEEAALLLYYY LOOOOVVEEEEEEEEEE YOOOUUUUU SOOOOOOOO MUCCCCHHHHHHHH
+<<<<<<33333333333333333<br><br>
+
+Mayyyy we always be thisss happpyyy and healthyyy babyyy🫶<br><br>
+
+My loveelyyy sweetlittleeeee pumpkin pie, my buubleee tea, my masu bhaaattt, my momo, and my favv alll 😭<br><br>
+
+I reaallyyy appreciate all the thingsss youuu do for meee babyyy😭I REALLYYY LOVEEEEE YOUUU SOOO MUCHHHH AND YOURE TURNING FULL 17 AND RUNNING ON 18TH YEAR.SOO BIGGGG ME SMALL BUT ILL ALWAYS BE TALLERRR HAHAHAHAHAHAAAA<br><br>
+
+Thank you for every memory, every laugh, every smile and every moment together.<br><br>
+
+Happy 2nd Anniversary babyyy 💙<br><br>
+
+— Yours pukuuu (Nishan) 👉👈🫶
+</div>
+</section>
+
+<section class="section final">
+✨ And  even  if i never knew you ...<br>
+I'd still choose you.<br><br>
+💙 Forever Us 💙
+</section>
+
+</div>
+
+<script>
+
+</script>
+<script>
+const unlockDate = new Date("July 8, 2026 00:00:00");
+
+function updateLockCountdown() {
+    const now = new Date();
+    const diff = unlockDate - now;
+
+    if (diff <= 0) {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("lockCountdown").innerHTML =
+        `${days} Days ${hours} Hours<br>${minutes} Minutes ${seconds} Seconds`;
+}
+
+updateLockCountdown();
+setInterval(updateLockCountdown, 1000);
+let slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+if(slides.length > 0){
+
+slides[0].classList.add("active");
+
+setInterval(()=>{
+
+slides[currentSlide].classList.remove("active");
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+slides[currentSlide].classList.add("active");
+
+},3000);
+
+}
+
+</script>
+</body>
+</html>
